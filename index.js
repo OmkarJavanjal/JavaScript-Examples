@@ -727,3 +727,21 @@ Scope determines the accessibility (visibility) of these variables.
 Variables defined inside a function are not accessible (visible) from outside the function.
 https://www.w3schools.com/js/js_scope.asp
  */
+//Local JavaScript variables
+
+// code here can NOT use carName
+//console.log('carname outside: ', carName);
+(function myFunction() {
+  var carName = "Volvo";
+  console.log('carname inside: ', carName);
+  // code here CAN use carName
+})();
+
+//Global JavaScript Variables
+var carName = "Volvo";
+// code here can use carName
+console.log('carname outside1: ', carName);
+(function myFunction() {
+  // code here can also use carName
+  console.log('carname inside1: ', carName);
+})();
