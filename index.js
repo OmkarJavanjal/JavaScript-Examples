@@ -959,6 +959,7 @@ A promise is an object that may produce a single value some time in the future: 
 
 How Promises Work
 A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
+
 Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
 Rejected: onRejected() will be called (e.g., reject() was called)
 Pending: not yet fulfilled or rejected
@@ -993,7 +994,7 @@ wait2(5000)
   .then(b => console.log(b)) 
 
 
-var promise = new Promise(function(resolve, reject, fulfill) { 
+var promise = new Promise(function(resolve, reject) { 
   const x = "geeksforgeeks"; 
   const y = "geeksforgeeks"
   if(x === y) { 
@@ -1024,6 +1025,7 @@ promise2
         console.log(errorMessage); 
     }) 
 
+
     
 var promise3 = new Promise(function(resolve, reject) { 
     reject('Promise Rejected') 
@@ -1036,4 +1038,43 @@ promise3
        //error handler function is invoked 
         console.log(errorMessage); 
     }) 
+
+
+
+var promise4 = new Promise(function(resolve, reject) { 
+    reject('Promise Rejected') 
+}) 
+  
+promise4 
+    .then(function(successMessage) { 
+        console.log(successMessage); 
+    }) 
+    .catch(function(errorMessage) { 
+       //error handler function is invoked 
+        console.log(errorMessage); 
+    });
+
+
+
+var promise5 = new Promise(function(resolve, reject) { 
+    throw new Error('Some error has occured') 
+}) 
+  
+promise5 
+    .then(function(successMessage) { 
+        console.log(successMessage); 
+    }) 
+    .catch(function(errorMessage) { 
+       //error handler function is invoked 
+        console.log(errorMessage); 
+    }); 
+
+
+
+
+
+
+
+
+
 
