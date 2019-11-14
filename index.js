@@ -738,10 +738,34 @@ https://www.w3schools.com/js/js_scope.asp
 })();
 
 //Global JavaScript Variables
-var carName = "Volvo";
+var carName = "Volvo1";
 // code here can use carName
 console.log('carname outside1: ', carName);
 (function myFunction() {
   // code here can also use carName
   console.log('carname inside1: ', carName);
 })();
+
+//Scope determines the accessibility of variables, objects, and functions from different parts of the code.
+
+//Automatically global
+myFunction();
+// code here can use carName
+console.log('carname outside2: ', carName);
+function myFunction() {
+  carName = "Volvo2";
+  console.log('carname inside2: ', carName);
+}
+//In "Strict Mode", undeclared variables are not automatically global.
+/*Example:
+"use strict";
+myFunction();
+function myFunction() {
+  y = 3.14;   // This will also cause an error because y is not declared
+}
+ */
+/*With JavaScript, the global scope is the complete JavaScript environment.
+In HTML, the global scope is the window object. All global variables belong to the window object. */
+
+
+
