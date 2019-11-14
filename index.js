@@ -817,6 +817,24 @@ for (let i = 0; i < 10; i++) {
 }
 // Here i is 5
 
+var x = 2;       // Allowed
+let x = 3;       // Not allowed
+
+{
+  var x = 4;   // Allowed
+  let x = 5   // Not allowed
+}
+
+/**Hoisting
+Variables defined with var are hoisted to the top (if you don't know what Hoisting is, read our Hoisting Chapter).
+
+You can use a variable before it is declared:
+
+Variables defined with let are not hoisted to the top.
+
+Using a let variable before it is declared will result in a ReferenceError.
+
+The variable is in a "temporal dead zone" from the start of the block until it is declared: */
 
 
 
