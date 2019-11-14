@@ -888,3 +888,52 @@ cars[0] = "Toyota";
 
 // You can add an element:
 cars.push("Audi");
+
+//But you can NOT reassign a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+//Redeclaring
+var x = 2;    //  Allowed
+var x = 3;    //  Allowed
+x = 4;        //  Allowed
+
+var x = 2;         // Allowed
+const x = 2;       // Not allowed
+{
+  let x = 2;     // Allowed
+  const x = 2;   // Not allowed
+}
+
+//Redeclaring a variable with const, in another scope, or in another block, is allowed:
+const x = 2;       // Allowed
+
+{
+  const x = 3;   // Allowed
+}
+
+{
+  const x = 4;   // Allowed
+}
+
+/**Hoisting
+Variables defined with var are hoisted to the top (if you don't know what Hoisting is, read our Hoisting Chapter).
+
+You can use a var variable before it is declared:
+ */
+carName = "Volvo";    // You CAN use carName here
+var carName;
+/**Variables defined with const are not hoisted to the top.
+
+A const variable cannot be used before it is declared: 
+carName = "Volvo";    // You can NOT use carName here
+const carName = "Volvo";*/
+
+
+
+
+
+
+
+
+
