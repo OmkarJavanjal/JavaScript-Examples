@@ -727,7 +727,8 @@ Scope determines the accessibility (visibility) of these variables.
 Variables defined inside a function are not accessible (visible) from outside the function.
 https://www.w3schools.com/js/js_scope.asp
  */
-//Local JavaScript variables
+
+//Local/Function JavaScript variables
 
 // code here can NOT use carName
 //console.log('carname outside: ', carName);
@@ -766,6 +767,57 @@ function myFunction() {
  */
 /*With JavaScript, the global scope is the complete JavaScript environment.
 In HTML, the global scope is the window object. All global variables belong to the window object. */
+
+//JS Let 
+/*ES2015 introduced two important new JavaScript keywords: let and const.
+
+These two keywords provide Block Scope variables (and constants) in JavaScript.
+
+Before ES2015, JavaScript had only two types of scope: Global Scope and Function Scope. 
+https://www.w3schools.com/js/js_let.asp
+*/
+//JavaScript Block Scope
+
+{
+  var x = 2;
+}
+// x CAN be used outside with var
+
+{
+  let x = 2;
+}
+// x can NOT be used outside with let
+
+
+var x = 10;
+// Here x is 10
+{
+  var x = 2;
+  // Here x is 2
+}
+// Here x is 2
+
+var x = 10; //or let
+// Here x is 10
+{
+  let x = 2;
+  // Here x is 2
+}
+// Here x is 10
+
+var i = 5;
+for (var i = 0; i < 10; i++) {
+  // some statements
+}
+// Here i is 10
+
+let i = 5;
+for (let i = 0; i < 10; i++) {
+  // some statements
+}
+// Here i is 5
+
+
 
 
 
