@@ -952,8 +952,37 @@ function add(a, b , callback){
    add(5,6,disp); 
 
 
+//Promise
+/*
+What is a Promise?
+A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+
+How Promises Work
+A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
+Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
+Rejected: onRejected() will be called (e.g., reject() was called)
+Pending: not yet fulfilled or rejected
+A promise is settled if it’s not pending (it has been resolved or rejected). Sometimes people use resolved and settled to mean the same thing: not pending.
+Once settled, a promise can not be resettled. Calling resolve() or reject() again will have no effect. The immutability of a settled promise is an important feature.
+
+ */
+
+const wait = time => new Promise((resolve) => setTimeout(resolve, time));
+
+wait(4000).then(() => console.log('Hello!')); // 'Hello!'
 
 
+//Promises can be chained
+const wait = time => new Promise(
+  res => setTimeout(() => res(), time)
+);
 
-
-
+wait(5000)
+  // onFulfilled() can return a new promise, `x`
+  .then(() => new Promise(res => res('foo')))
+  // the next promise will assume the state of `x`
+  .then(a => a)
+  // Above we returned the unwrapped value of `x`
+  // so `.then()` above returns a fulfilled promise
+  // with that value:
+  .then(b => console.log(b)) 
