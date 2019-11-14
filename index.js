@@ -138,7 +138,7 @@ if(result === 2) {
 //switch case without break statement
 switch(result){
   case 1: console.log('switch result is 1');
-  case 2: console.log(' switch result is 1');
+  case 2: console.log(' switch result is 2');
   default: console.log('switch result');
 }
 
