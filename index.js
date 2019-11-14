@@ -836,6 +836,55 @@ Using a let variable before it is declared will result in a ReferenceError.
 
 The variable is in a "temporal dead zone" from the start of the block until it is declared: */
 
+//JavaScript Const
 
+const PI = 3.141592653589793;
+PI = 3.14;      // This will give an error
+PI = PI + 10;   // This will also give an error
 
+/**Block Scope
+Declaring a variable with const is similar to let when it comes to Block Scope.
 
+The x declared in the block, in this example, is not the same as the x declared outside the block:
+https://www.w3schools.com/js/js_const.asp
+ */
+
+var x = 10;
+// Here x is 10
+{
+  const x = 2;
+  // Here x is 2
+}
+// Here x is 10
+
+/**The keyword const is a little misleading.
+
+It does NOT define a constant value. It defines a constant reference to a value.
+
+Because of this, we cannot change constant primitive values, but we can change the properties of constant objects. */
+
+//Constant Objects can Change
+//You can change the properties of a constant object:
+// You can create a const object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// You can change a property:
+car.color = "red";
+
+// You can add a property:
+car.owner = "Johnson";
+
+//But you can NOT reassign a constant object:
+const car = {type:"Fiat", model:"500", color:"white"};
+car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+
+//Constant Arrays can Change
+//You can change the elements of a constant array:
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota";
+
+// You can add an element:
+cars.push("Audi");
