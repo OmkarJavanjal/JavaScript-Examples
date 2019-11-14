@@ -964,20 +964,25 @@ Rejected: onRejected() will be called (e.g., reject() was called)
 Pending: not yet fulfilled or rejected
 A promise is settled if it’s not pending (it has been resolved or rejected). Sometimes people use resolved and settled to mean the same thing: not pending.
 Once settled, a promise can not be resettled. Calling resolve() or reject() again will have no effect. The immutability of a settled promise is an important feature.
+Visit for more info:
 
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+https://www.geeksforgeeks.org/javascript-promises/
  */
 
 const wait = time => new Promise((resolve) => setTimeout(resolve, time));
-
 wait(4000).then(() => console.log('Hello!')); // 'Hello!'
 
 
 //Promises can be chained
-const wait = time => new Promise(
+const wait2 = time => new Promise(
   res => setTimeout(() => res(), time)
 );
 
-wait(5000)
+wait2(5000)
   // onFulfilled() can return a new promise, `x`
   .then(() => new Promise(res => res('foo')))
   // the next promise will assume the state of `x`
@@ -986,3 +991,49 @@ wait(5000)
   // so `.then()` above returns a fulfilled promise
   // with that value:
   .then(b => console.log(b)) 
+
+
+var promise = new Promise(function(resolve, reject, fulfill) { 
+  const x = "geeksforgeeks"; 
+  const y = "geeksforgeeks"
+  if(x === y) { 
+    resolve(); 
+  } else { 
+    reject(); 
+  } 
+}); 
+  
+promise. 
+    then(function () { 
+        console.log('Success, You are a GEEK'); 
+    }). 
+    catch(function () { 
+        console.log('Some error has occured'); 
+    });
+
+
+var promise2 = new Promise(function(resolve, reject) { 
+    resolve('Geeks For Geeks'); 
+}) 
+  
+promise2 
+    .then(function(successMessage) { 
+       //success handler function is invoked 
+        console.log(successMessage); 
+    }, function(errorMessage) { 
+        console.log(errorMessage); 
+    }) 
+
+    
+var promise3 = new Promise(function(resolve, reject) { 
+    reject('Promise Rejected') 
+}) 
+  
+promise3 
+    .then(function(successMessage) { 
+        console.log(successMessage); 
+    }, function(errorMessage) { 
+       //error handler function is invoked 
+        console.log(errorMessage); 
+    }) 
+
