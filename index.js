@@ -1207,6 +1207,7 @@ addAsync(10).then((sum) => {
 });
 
 
+
 //Real time example
 async function fetchUsers(endpoint) {
   const res = await fetch(endpoint);
