@@ -8,6 +8,7 @@ About Me:
 
 //Refresh right side browser window Page if any error occurs as Stackblitz is not able to handle prototypes perfectly. 
 
+
 // Import stylesheets
 import './style.css';
 // comment in JS
@@ -531,6 +532,7 @@ var employee11=new Employee("Martin","Roy");
 console.log('Employee Prototype: ', employee11);
 
 //object  prototype
+/*Uncomment below part and test as I said initially stackblitz is not good to handle prototype properties. If you iuncomment it will give error, but if you reload right side browser window it will work. You can also copy paste it in chrome browser console and test. */
 // var mainObj = {
 //   prop1:'a'
 // }
