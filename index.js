@@ -1078,7 +1078,22 @@ It is non blocking (just like promises and callbacks).
 Async/Await was created to simplify the process of working with and writing chained promises.
 Async functions return a Promise. If the function throws an error, the Promise will be rejected. If the function returns a value, the Promise will be resolved.
 
-Syntax:
+
+Await
+Async functions can make use of the await expression. This will pause the async function and wait for the Promise to resolve prior to moving on.
+Without Async, Await can not be used
+
+Visit for more info:
+https://codeburst.io/javascript-es-2017-learn-async-await-by-example-48acc58bad65
+
+https://javascript.info/async-await
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+https://www.geeksforgeeks.org/async-await-function-in-javascript/
+ */
+
+//Syntax:
 // Normal Function
 function add(x,y){
   return x + y;
@@ -1088,18 +1103,59 @@ async function add(x,y){
   return x + y;
 }
 
-Await
-Async functions can make use of the await expression. This will pause the async function and wait for the Promise to resolve prior to moving on.
-
- */
-
-
-
-
+//Async with arrow function
+var getData1 = async() => { 
+	var data = "Hello World"; 
+	return data; 
+} 
+getData1().then(data => console.log(data)); 
 
 
+//Aync Await
+const getData2 = async() => { 
+	var y = await "Hello World"; 
+	console.log(y); 
+} 
+console.log(1); 
+getData2(); 
+console.log(2); 
+//output will be 1,2,Hello World as getData is async
 
 
+async function f() {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+  });
+
+  let result = await promise; // wait until the promise resolves (*)
+
+  console.log('aync demo1: ',result); // "done!"
+}
+f();
+
+
+//Error Handling
+async function f2() {
+
+  try {
+    let response = await fetch('http://no-such-url');
+  } catch(err) {
+    console.log('aync demo2 error: ',err); // TypeError: failed to fetch
+  }
+}
+f2();
+
+
+
+//Async Class method
+class Waiter {
+  async wait() {
+    return await Promise.resolve(1);
+  }
+}
+new Waiter()
+  .wait()
+  .then(console.log); // 1
 
 
 
@@ -1123,6 +1179,11 @@ function addPromise(x){
     })
   });
 }
+addPromise(10).then((sum) => {
+  console.log('Sum without asynck await:', sum);
+});
+
+
 
 //With Async Await
 function doubleAfter2Seconds(x) {
@@ -1142,15 +1203,43 @@ async function addAsync(x) {
 
 
 addAsync(10).then((sum) => {
-  console.log(sum);
-});
-
-addPromise(10).then((sum) => {
-  console.log('Sum without asynck await:', sum);
+  console.log('Sum with asynck await:',sum);
 });
 
 
-//
+//Real time example
+async function fetchUsers(endpoint) {
+  const res = await fetch(endpoint);
+  let data = await res.json();
+
+  data = data.map(user => user.username);
+
+  console.log('Response: ',data);
+}
+
+fetchUsers('https://jsonplaceholder.typicode.com/users');
+
+
+//Like promise.then, await allows to use thenable objects (those with a callable then method). The idea is that a 3rd-party object may not be a promise, but promise-compatible: if it supports .then, that’s enough to use with await.
+
+//Here’s a demo Thenable class, the await below accepts its instances:
+
+class Thenable {
+  constructor(num) {
+    this.num = num;
+  }
+  then(resolve, reject) {
+    // resolve with this.num*2 after 1000ms
+    setTimeout(() => resolve(this.num * 2), 1000); // (*)
+  }
+};
+
+async function f3() {
+  // waits for 1 second, then result becomes 2
+  let result = await new Thenable(10);
+  console.log('Thenable asynck await:',result);
+}
+f3();
 
 
 
