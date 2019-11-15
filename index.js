@@ -1258,35 +1258,4 @@ f3();
 
 //Follow me at github for interesting technologies related to Javascript and for corresponding Examples
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//For any issue you can reach me at github
