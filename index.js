@@ -1,3 +1,12 @@
+/*This course is designed and developed by Omkar Javanjal.
+About Me:
+  I'm Javascript Enthusiastic Developer and working with many Javascript libraries and frameworks like React.js, Angular,RxJS, node.js, nest.js, etc and many middlewares like Redux, Saga, NgRx, Selectors, etc.
+
+  Please follow me at github: https://github.com/OmkarJavanjal
+  You will find many interesting topics, new technologis and examples.
+ */
+
+
 // Import stylesheets
 import './style.css';
 // comment in JS
@@ -1244,7 +1253,7 @@ f3();
 
 
 
-
+//Follow me at github for interesting technologies related to Javascript and for corresponding Examples
 
 
 
