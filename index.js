@@ -6,6 +6,7 @@ About Me:
   You will find many interesting topics, new technologis and examples.
  */
 
+//Refresh right side browser window Page if any error occurs as Stackblitz is not able to handle prototypes perfectly. 
 
 // Import stylesheets
 import './style.css';
