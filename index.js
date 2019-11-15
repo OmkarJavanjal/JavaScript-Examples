@@ -531,13 +531,13 @@ var employee11=new Employee("Martin","Roy");
 console.log('Employee Prototype: ', employee11);
 
 //object  prototype
-var mainObj = {
-  prop1:'a'
-}
-mainObj.__proto__.prop2 = 'b';
+// var mainObj = {
+//   prop1:'a'
+// }
+// mainObj.__proto__.prop2 = 'b';
 
-console.log('mainobj prototype: ', mainObj);
-console.log('mainobj prototype: ', mainObj.__proto__);
+// console.log('mainobj prototype: ', mainObj);
+// console.log('mainobj prototype: ', mainObj.__proto__);
 
 //JS static Keyword
 class Test  
