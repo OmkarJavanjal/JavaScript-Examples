@@ -285,12 +285,12 @@ console.log('arrcopy2:', arrCopy2);
 
 //Regular Functions
 /*A JavaScript function is a block of code designed to perform a particular task.*/
-function myFunction(a, b) {
+function myFunction5(a, b) {
   return a * b;             // Function returns the product of a and b
 }
 
-var x = myFunction(4, 3);   // Function is called, return value will end up in x
-console.log('val of x: ', x);
+var x5 = myFunction5(4, 3);   // Function is called, return value will end up in x
+console.log('val of x: ', x5);
 
 //number of input parameters unknown
 function myFunction2(...a) {
