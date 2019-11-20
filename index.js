@@ -1256,6 +1256,9 @@ f3();
 
 
 
-//Follow me at github for interesting technologies related to Javascript and for corresponding Examples
+import {displayName} from './displayName';
 
+(function fullname(){
+  new displayName('Omkar','Javanjal');
+})()
 //For any issue you can reach me at github
