@@ -740,6 +740,7 @@ Variables defined inside a function are not accessible (visible) from outside th
 https://www.w3schools.com/js/js_scope.asp
  */
 
+
 //Local/Function JavaScript variables
 
 // code here can NOT use carName
