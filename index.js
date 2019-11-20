@@ -949,7 +949,7 @@ const carName = "Volvo";*/
 Simply put: A callback is a function that is to be executed after another function has finished executing — hence the name ‘call back’.
 More complexly put: In JavaScript, functions are objects. Because of this, functions can take functions as arguments, and can be returned by other functions. Functions that do this are called higher-order functions. Any function that is passed as an argument is called a callback function. */
 
-function add(a, b , callback){ 
+function add15(a, b , callback){ 
    console.log(`The sum of ${a} and ${b} is ${a+b}.`); 
    callback(); 
    } 
@@ -961,7 +961,7 @@ function add(a, b , callback){
    } 
      
    // Calling add() function 
-   add(5,6,disp); 
+   add15(5,6,disp); 
 
 
 //Promise
