@@ -744,10 +744,10 @@ https://www.w3schools.com/js/js_scope.asp
 //Local/Function JavaScript variables
 
 // code here can NOT use carName
-//console.log('carname outside: ', carName);
+//console.log('carname outside: ', carName6);
 (function myFunction() {
-  var carName = "Volvo";
-  console.log('carname inside: ', carName);
+  var carName6 = "Volvo";
+  console.log('carname inside: ', carName6);
   // code here CAN use carName
 })();
 
