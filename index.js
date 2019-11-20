@@ -1255,6 +1255,7 @@ async function f3() {
 f3();
 
 
+//Import export in JS
 
 import {displayName} from './displayName';
 
