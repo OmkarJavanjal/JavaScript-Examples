@@ -943,7 +943,6 @@ carName = "Volvo";    // You can NOT use carName here
 const carName = "Volvo";*/
 
 
-//Async/Await
 
 //CallBack
 /**What is a Callback?
